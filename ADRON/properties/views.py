@@ -56,3 +56,11 @@ class DetailPage(APIView):
         single_property = Properties.objects.get(id=id)
         single_property.delete()
         return Response({'Sucess': 'Property deleted successfully'}, status=status.HTTP_204_NO_CONTENT)
+    
+
+
+# from rest_framework.generics import RetrieveUpdateDestroyAPIView #faster way
+
+# class DetailPage(RetrieveUpdateDestroyAPIView):
+#     queryset = Properties.objects.all()
+#     serializer_class = PropertySerializers
